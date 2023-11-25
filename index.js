@@ -1,10 +1,8 @@
 var rpc = require("discord-rpc");
-
-// set clientId
-const clientId = "1170239764251807784";
-
-// make client
+const fs = require('fs');
+const clientId = "Bot Client ID";
 const client = new rpc.Client({ transport: "ipc" });
+var text = fs.readFileSync('discordRPC-profile.txt', 'utf8');
 
 	const date1 = new Date();
 	const date2 = date1.getFullYear() + "年" + 
@@ -18,13 +16,15 @@ client.on("ready", () => {
   client.setActivity({
 
     // text
-    details: "＼(^o^)／ｵﾜﾀ",
+    details: `${text}`,
     state: "Playing Solo",
     startTimestamp: new Date(),
 
     // image
-    largeImageText: "Developed by hi_ro951",
-    largeImageKey: "h-750",
+    largeImageText: "ver.1.1.0",
+    largeImageKey: "r_skin",
+    smallImageText: "Developed by hi_ro951",
+    smallImageKey: "h-750",
 
     // partysize / partymax
     partyId: "ae488379-351d-4a4f-ad32-2b9b01c91657",
@@ -34,15 +34,17 @@ client.on("ready", () => {
     // button
     buttons : [
       {
-        label : "Lit Link", 
+        label : "LitLink", //ボタン1
         url : "https://lit.link/hiro951"
       },
       {
-        label : `起動時刻：${date2}`, 
+        label : `起動時刻：${date2}`, //ボタン2
         url : "https://github.com/hr951"
       }
     ]
   })
 });
+
+console.log(`起動しました。(ver.1.1.0)\n起動時刻：${date2}`)
 
 client.login({ clientId }).catch(console.error);
