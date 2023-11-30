@@ -1,50 +1,41 @@
 var rpc = require("discord-rpc");
-const fs = require('fs');
 const clientId = "Bot Client ID";
 const client = new rpc.Client({ transport: "ipc" });
-var text = fs.readFileSync('discordRPC-profile.txt', 'utf8');
-
-	const date1 = new Date();
-	const date2 = date1.getFullYear() + "年" + 
-				(date1.getMonth() + 1)  + "月" + 
-				date1.getDate() + "日" + 
-				date1.getHours() + "時" + 
-				date1.getMinutes() + "分" + 
-				date1.getSeconds() + "秒"
+const ver = "1.1.3";
 
 client.on("ready", () => {
   client.setActivity({
 
     // text
-    details: `${text}`,
+    details: "孤独をプレイ中",
     state: "Playing Solo",
     startTimestamp: new Date(),
 
     // image
-    largeImageText: "ver.1.1.0",
+    largeImageText: `ver.${ver}`,
     largeImageKey: "r_skin",
     smallImageText: "Developed by hi_ro951",
     smallImageKey: "h-750",
 
     // partysize / partymax
-    partyId: "ae488379-351d-4a4f-ad32-2b9b01c91657",
+    partyId: "ab5a967e-0c91-4cda-a7c7-292f346c2eb8",
     partySize: 1,
     partyMax: 1,
 
     // button
     buttons : [
       {
-        label : "LitLink", //ボタン1
+        label : "LitLink", 
         url : "https://lit.link/hiro951"
       },
       {
-        label : `起動時刻：${date2}`, //ボタン2
-        url : "https://github.com/hr951"
+        label : `DiscordRPC Sample`, 
+        url : "https://github.com/hr951/discordrpc-sample"
       }
     ]
   })
 });
 
-console.log(`起動しました。(ver.1.1.0)\n起動時刻：${date2}`)
+console.log(`起動しました。(ver.${ver})`);
 
 client.login({ clientId }).catch(console.error);
