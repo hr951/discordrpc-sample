@@ -13,9 +13,9 @@ client.on("ready", () => {
 
     // image
     largeImageText: `ver.${ver}`,
-    largeImageKey: "r_skin",
-    smallImageText: "Developed by hi_ro951",
-    smallImageKey: "h-750",
+    largeImageKey: "ImageID",
+    smallImageText: "Text",
+    smallImageKey: "ImageID",
 
     // partysize / partymax
     partyId: "ab5a967e-0c91-4cda-a7c7-292f346c2eb8",
@@ -25,12 +25,12 @@ client.on("ready", () => {
     // button
     buttons : [
       {
-        label : "LitLink", 
-        url : "https://lit.link/hiro951"
+        label : "Text1", 
+        url : "URL1"
       },
       {
-        label : `DiscordRPC Sample`, 
-        url : "https://github.com/hr951/discordrpc-sample"
+        label : `Text2`, 
+        url : "URL2"
       }
     ]
   })
